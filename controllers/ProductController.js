@@ -2,6 +2,7 @@ const Product = require("../models/PorductModel")
 const path = require('path')
 const fs = require("fs")
 const Expert = require("../models/ExpertsModel")
+const mailService = require("../services/mail-service")
 
 class ProductController {
     async getAllProducts (req, res, next) {
@@ -58,6 +59,13 @@ class ProductController {
     
     res.json({work: "done"})
   }
+
+  async getOrderData (req, res, next) {
+      await mailService.sendActivationMail("adrefsewer@gmail.com", req.body.user,  req.body.basketItems)
+    
+      res.json({work: "done"})
+  }
+
 }
 
 module.exports = new ProductController()
