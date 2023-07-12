@@ -21,9 +21,9 @@ class MailService {
                <div>
                  <h1>${user.name}</h1>
                  <h2>${user.phone}</h2>
-                 <p>${user.country}</p>
-                 <p>${user.city}</p>
-                 <p>${user.address}</p>
+                 <h4>${user.country}</h4>
+                 <h4>${user.city}</h4>
+                 <h4>${user.address}</h4>
                  <ul>
                    ${
                     products.map(item => {
