@@ -15,5 +15,7 @@ router.post("/addProduct", ProductController.addProduct)
 router.post("/addExpert", ProductController.addExrept)
 
 router.post("/getOrderData", ProductController.getOrderData)
+
+router.post("/findProducts", ProductController.findProducts)
  
 module.exports = router;
