@@ -65,6 +65,16 @@ class ProductController {
     
       res.json({work: "done"})
   }
+    
+   async findProducts (req, res, next) {
+        if (req.body.name.length > 1) {
+            const regex = new RegExp(req.body.name, 'i');
+            const products =  await Product.find({ productName: regex })
+            res.json(products)
+        } else {
+            res.json([])
+        }
+    }
 
 }
 
